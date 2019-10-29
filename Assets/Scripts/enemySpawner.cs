@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
+    
     public float spawnTime;
     public GameObject enemy;
 
@@ -14,28 +15,33 @@ public class enemySpawner : MonoBehaviour
     {
         //StartCoroutine(BreakInSpawning());
     }
-
+    
+    
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            spawnToggle = !spawnToggle; 
+            //StartCoroutine(BreakInSpawning());
+          spawnToggle = true; 
         }
 
         if (spawnToggle == true)
         {
             StartCoroutine(BreakInSpawning());
         }
-        
+
     }
 
     //This is the coroutine started earlier
     IEnumerator BreakInSpawning()
     {
+        spawnToggle = false;
         yield return new WaitForSeconds(spawnTime);
         Instantiate(enemy);
+        
     }
+    
 
 
 }

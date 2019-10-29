@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class enemyMove : MonoBehaviour
 {
-    public GameObject trackPoint;
     public Vector3 pointPos;
+    public GameObject player;
 
     private NavMeshAgent agent;
 
@@ -14,12 +14,13 @@ public class enemyMove : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        pointPos = trackPoint.transform.position;
+        pointPos = player.transform.position;
         agent.destination = pointPos;
     }
 }
