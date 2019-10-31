@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
-    
     public float spawnTime;
-    public GameObject enemy;
+    public float curMut;
+    public float maxMut;
 
-    public bool spawnToggle = false;
+    //public bool spawnToggle = false;
+
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(BreakInSpawning());
+        StartCoroutine(Spawning());
     }
-    
-    
+
+    #region Manual Spawning Code
     // Update is called once per frame
+    /*
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -32,16 +35,19 @@ public class enemySpawner : MonoBehaviour
         }
 
     }
+    */
+    #endregion
 
     //This is the coroutine started earlier
-    IEnumerator BreakInSpawning()
+    IEnumerator Spawning()
     {
-        spawnToggle = false;
+        //spawnToggle = false;
         yield return new WaitForSeconds(spawnTime);
-        Instantiate(enemy);
-        
+        Instantiate(enemy, transform.position, transform.rotation);
+        curMut += 1;
+        if (curMut < maxMut)
+        {
+            StartCoroutine(Spawning());
+        }
     }
-    
-
-
 }

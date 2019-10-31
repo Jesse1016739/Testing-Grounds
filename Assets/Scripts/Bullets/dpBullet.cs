@@ -8,6 +8,8 @@ public class dpBullet : MonoBehaviour
     public float dpbulletSpeed;
     private Rigidbody dpbulletRB;
 
+    public enemyStats s;
+
     public float dpDespawnTime;
 
 
@@ -44,8 +46,8 @@ public class dpBullet : MonoBehaviour
         else if (col.transform.tag == "Mutant")
         {
             Destroy(gameObject);
-            Destroy(col.gameObject);
         }
+
     }
 
     #region Old Code
@@ -64,5 +66,4 @@ public class dpBullet : MonoBehaviour
     */
     #endregion
 }
-
 

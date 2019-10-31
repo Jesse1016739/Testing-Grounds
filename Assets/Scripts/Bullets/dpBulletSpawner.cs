@@ -12,6 +12,7 @@ public class dpBulletSpawner : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(projectile, transform.position, transform.rotation);
+            Debug.Log("Fired Gun");
         }
     }
 }

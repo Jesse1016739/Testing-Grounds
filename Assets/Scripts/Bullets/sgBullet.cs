@@ -8,6 +8,8 @@ public class sgBullet : MonoBehaviour
     public float sgBulletSpeed;
     private Rigidbody sgBulletRB;
 
+    public enemyStats stats;
+
     public float sgDespawnTime;
 
 
@@ -44,7 +46,7 @@ public class sgBullet : MonoBehaviour
         else if (col.transform.tag == "Mutant")
         {
             Destroy(gameObject);
-            Destroy(col.gameObject);
+            stats.curHealth -= 3;
         }
     }
 }
