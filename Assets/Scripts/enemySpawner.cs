@@ -8,16 +8,34 @@ public class enemySpawner : MonoBehaviour
     public float curMut;
     public float maxMut;
 
+    public bool maxMet = false;
     //public bool spawnToggle = false;
 
     public GameObject enemy;
+
+    public int spawnCount;
+    public int enemyCount;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spawning());
+        spawnTime = Random.Range(3, 6);
+
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        spawnCount = spawners.Length;
     }
 
+    void Update()
+    {
+        GameObject[] enemyList = GameObject.FindGameObjectsWithTag("Mutant");
+        enemyCount = enemyList.Length;
+
+        if(enemyCount == maxMut)
+        {
+            maxMet = true;
+        }
+    }
     #region Manual Spawning Code
     // Update is called once per frame
     /*
@@ -41,13 +59,18 @@ public class enemySpawner : MonoBehaviour
     //This is the coroutine started earlier
     IEnumerator Spawning()
     {
-        //spawnToggle = false;
-        yield return new WaitForSeconds(spawnTime);
-        Instantiate(enemy, transform.position, transform.rotation);
-        curMut += 1;
-        if (curMut < maxMut)
+        if (maxMet == false)
         {
-            StartCoroutine(Spawning());
+            //spawnToggle = false;
+            yield return new WaitForSeconds(spawnTime);
+            Instantiate(enemy, transform.position, transform.rotation);
+            curMut += 1;
+            if (curMut < maxMut)
+            {
+                StartCoroutine(Spawning());
+            }
         }
+
+
     }
 }

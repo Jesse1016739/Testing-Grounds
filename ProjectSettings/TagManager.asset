@@ -8,6 +8,7 @@ TagManager:
   - Mutant
   - dpBullet
   - sgBullet
+  - Spawner
   layers:
   - Default
   - TransparentFX

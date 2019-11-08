@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class enemyCount : MonoBehaviour
 {
+    /*
     public float count;
     public int maxEnemy;
 
-    public int enemiesLeft;
+    public enemySpawner eS;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,13 @@ public class enemyCount : MonoBehaviour
     void Update()
     {
         GameObject[] enemyLimit = GameObject.FindGameObjectsWithTag("Mutant");
-        enemiesLeft = enemyLimit.Length;
+        count = enemyLimit.Length;
+
+        if (count == maxEnemy)
+        {
+            eS.maxMet = true;
+        }
         
     }
+    */
 }
