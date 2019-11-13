@@ -20,7 +20,7 @@ public class enemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(Spawning());
-        spawnTime = Random.Range(3, 6);
+        spawnTime = Random.Range(2, 6);
 
         GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
         spawnCount = spawners.Length;
