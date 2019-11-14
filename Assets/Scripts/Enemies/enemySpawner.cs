@@ -59,6 +59,7 @@ public class enemySpawner : MonoBehaviour
     //This is the coroutine started earlier
     IEnumerator Spawning()
     {
+        yield return new WaitForSeconds(spawnTime);
         if (maxMet == false)
         {
             //spawnToggle = false;
