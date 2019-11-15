@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 5242996557084855326}
   - component: {fileID: 4270774175573696964}
   - component: {fileID: 2841198069837272446}
+  - component: {fileID: 2188098414892573785}
   m_Layer: 0
   m_Name: Ranged Mutant
   m_TagString: Untagged
@@ -187,6 +188,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2188098414892573785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093517346657975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc86aa3498d6544a8fac0da75ce7886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distBetween: 0
+  gunRange: 5
+  p1dist: 0
+  p2dist: 0
+  enemySpeed: 5
+  target: {x: 0, y: 0, z: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  gunSpawn: {fileID: 0}
 --- !u!1 &9118684104953360089
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4185770951859843812}
+  - component: {fileID: 6957457086499483727}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -217,3 +240,19 @@ Transform:
   m_Father: {fileID: 7872933816691788565}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6957457086499483727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118684104953360089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0803e5b1c553e4184a1309cb4c8f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6116104518717955860, guid: bec9fa0f71f0cf441bf1c61380951057,
+    type: 3}
+  canFire: 0
+  enemyRPM: 0.5

@@ -14,14 +14,14 @@ public class rangedEnemy : MonoBehaviour
 
     public GameObject player1;
     public GameObject player2;
-    public GameObject gunSpawn;
+    public eBulletSpawner gunSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
         player1 = GameObject.FindGameObjectWithTag("Player 1");
         player2 = GameObject.FindGameObjectWithTag("Player 2");
-        gunSpawn = GameObject.FindGameObjectWithTag("EBullSpawn");
+        gunSpawn = GetComponentInChildren<eBulletSpawner>();
     }
 
     // Update is called once per frame
@@ -44,12 +44,19 @@ public class rangedEnemy : MonoBehaviour
         }
 
         transform.LookAt(target);
-        transform.position += transform.forward * enemySpeed * Time.deltaTime;
+        //transform.position += transform.forward * enemySpeed * Time.deltaTime;
 
         distBetween = Vector3.Distance(gameObject.transform.position, target);
-        if (distBetween == gunRange)
+
+        if (distBetween <= gunRange)
         {
-            //StartCoroutine(enemyShoot());
+            gunSpawn.canFire = true;
+            Debug.Log("Can Fire is True");
+        }
+        else if (distBetween > gunRange)
+        {
+            gunSpawn.canFire = false;
+            Debug.Log("Can Fire is False");
         }
     }
 
