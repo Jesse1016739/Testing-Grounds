@@ -413,6 +413,12 @@ PrefabInstance:
       propertyPath: enemyRPM
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6957457086499483727, guid: 74ecc45776aa27b4cba4cec89b681a69,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6210163994061838763, guid: b08b3f008ae5b7b4890215269ca03f22,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ecc45776aa27b4cba4cec89b681a69, type: 3}
 --- !u!1 &1487570253
